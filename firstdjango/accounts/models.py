@@ -17,7 +17,7 @@ class Tags(models.Model):
 
 class Product(models.Model):
     CATEGORY = (('Indoor','Indoor'),('Out Door','Out Door'),)
-    Name = models.CharField(max_length=200,null=True)
+    name = models.CharField(max_length=200,null=True)
     price = models.FloatField(null=True)
     category = models.CharField(max_length=200,null=True,choices=CATEGORY)
     description = models.CharField(max_length=200,null=True,blank=True)
@@ -26,10 +26,7 @@ class Product(models.Model):
 
     
     def __str__(self):
-        return self.Name
-
-
-      
+        return self.name
 
 class Order(models.Model):
     STATUS = (('pending','pending'),('Out For Delivery','Out For Delivery'),('Delivered','Delivered'))
