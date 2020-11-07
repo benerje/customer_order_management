@@ -27,7 +27,7 @@ SECRET_KEY = 'd*l5q-@+^7dki6jr6t*@g_t%9lyps-@ja28k4#e7$jokf15nby'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ ]
 
 
 # Application definition
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'firstdjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
     }
 }
 
@@ -132,4 +132,5 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR,'asser')
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
